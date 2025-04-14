@@ -1,0 +1,158 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #1a1a1a;
+}
+
+#home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #121212;
+    overflow: hidden;
+}
+
+/* Animated background */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 40%);
+    animation: pulse 15s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.1; transform: scale(0.95); }
+    100% { opacity: 0.3; transform: scale(1.05); }
+}
+
+/* Text styles */
+.home_text-wrapper {
+    text-align: center;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+.home_text-wrapper h1 {
+    color: var(--yellow-theme-main-color);
+    margin: 0;
+    font-weight: 500;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.4;
+    position: relative;
+    animation: textReveal 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes textReveal {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Text floating animation */
+.home_text-wrapper h1 span {
+    display: inline-block;
+    animation: float 6s ease-in-out infinite alternate;
+}
+
+.home_text-wrapper h1 span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Button container */
+.btn-wrapper {
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hire Me Button */
+.hire-me-btn {
+    position: relative;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    color: var(--yellow-theme-main-color);
+    border: 2px solid var(--yellow-theme-main-color);
+    border-radius: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 1.5s forwards;
+    opacity: 0;
+    display: inline-block;
+}
+
+.hire-me-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--yellow-theme-main-color);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.hire-me-btn:hover {
+    color: #121212;
+    transform: translateY(-3px);
+}
+
+.hire-me-btn:hover::before {
+    left: 0;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 550px) {
+    .home_text-wrapper h1 {
+        font-size: 2.8rem;
+        line-height: 1.3;
+    }
+    
+    .hire-me-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+    .home_text-wrapper h1 {
+        font-size: 3.5rem;
+        line-height: 1.4;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+    .home_text-wrapper h1 {
+        font-size: 4.5rem;
+        line-height: 1.5;
+    }
+}

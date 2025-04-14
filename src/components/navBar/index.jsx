@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaReact } from "react-icons/fa";
 import { HiX, HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import './styles.css';
 
 const data = [
   { label: "HOME", to: "/" },
@@ -16,8 +17,8 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div>
-        <Link to="/">
+      <div className="navbar">
+        <Link to="/" className="logo">
           <FaReact size={30} />
         </Link>
 
@@ -30,8 +31,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle - Completely unstyled */}
-        <button onClick={() => setIsOpen(!isOpen)}>
+        {/* Toggle Button */}
+        <button className="toggle-button" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <HiX /> : <HiMenu />}
         </button>
 
