@@ -16,7 +16,7 @@ html, body {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #121212;
+    background-color:rgb(46, 45, 45);
     overflow: hidden;
 }
 
@@ -117,7 +117,7 @@ html, body {
 }
 
 .hire-me-btn:hover {
-    color: #121212;
+    color: grey;
     transform: translateY(-3px);
 }
 
