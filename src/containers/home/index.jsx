@@ -1,13 +1,22 @@
 import React from 'react';
 import './styles.css';
-import {animate} from 'react-simple-animate';
+import { useAnimate } from 'react-simple-animate';  // Correct import
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const navigate = useNavigate();
-    
+    const { play, style } = useAnimate({
+        start: { opacity: 0, transform: 'translateY(20px)' },
+        end: { opacity: 1, transform: 'translateY(0)' },
+    });
+
+    // Trigger animation on mount
+    React.useEffect(() => {
+        play(true);
+    }, []);
+
     const handleNavigateToContactMe = () => {
-        navigate('/contact'); // lowercase 'n' for the function call
+        navigate('/contact');
     };
 
     return (
@@ -15,11 +24,11 @@ const Home = () => {
             <div className="animated-bg"></div>
             <div className='home_text-wrapper'>
                 <h1>
-                    <span>Hello, I'm Max</span>
+                    <span style={style}>Hello, I'm Max</span>
                     <br />
-                    <span>Full Stack Developer</span>
+                    <span style={style}>Full Stack Developer</span>
                 </h1>
-                <div className="btn-wrapper">
+                <div className="btn-wrapper" style={style}>
                     <button 
                         className="hire-me-btn" 
                         onClick={handleNavigateToContactMe}
@@ -31,6 +40,6 @@ const Home = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Home;

@@ -1,69 +1,116 @@
-/* styles.css */
-.about {
+/* Add this new layout structure at the bottom of your CSS */
+.about__content {
     display: flex;
-    flex-direction: column;
     width: 100%;
-    max-width: 1200px; /* Optional: constrain overall width */
-    margin: 0 auto;
-  
-    &__content {
-      display: flex;
-      flex-direction: column;
-      width: 50%; /* Takes up half the page width */
-      gap: 30px; /* Increased gap for better spacing */
-      padding: 30px;
-    }
-  
-    &__animation-container {
-      width: 100%; /* Fills the 50% container */
-      display: flex;
-      flex-direction: column;
-      gap: 25px; /* Consistent spacing between elements */
-    }
-  
-    /* Headings with heavier font weights */
-    .animated-line {
-      color: var(--yellow-theme-main-color);
-      font-weight: 900; /* Extra bold for headings */
-      font-size: 2.8rem; /* Slightly larger */
-      line-height: 1.2;
-      margin: 0;
-      text-transform: uppercase; /* Makes headings more impactful */
-      letter-spacing: 1px;
-    }
-  
-    /* Job summary with strong presence */
-    .job-summary {
-      color: var(--yellow-theme-main-color);
-      font-weight: 700; /* Bold but not as heavy as headings */
-      font-size: 1.2rem;
-      line-height: 1.6;
-    }
-  
-    /* Personal details with clear hierarchy */
-    .personal-details-list {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-  
-      li {
-        display: flex;
-        align-items: baseline;
-        
-        .title {
-          color: var(--yellow-theme-main-color);
-          font-weight: 800; /* Very bold for labels */
-          font-size: 1.1rem;
-          min-width: 120px; /* Creates alignment */
-        }
-        
-        .value {
-          color: var(--yellow-theme-sub-text-color);
-          font-weight: 600; /* Semi-bold for values */
-          font-size: 1rem;
-        }
-      }
-    }
   }
+  
+  .about__main-content {
+    width: 50%;
+    padding-right: 20px; /* Maintains spacing */
+  }
+  
+  .about__right-column {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns to top */
+    position: absolute; /* Changed from default */
+    right: 0; /* Positions at far right */
+    top: 100px; /* Adjust this value to move up/down */
+    margin-top: 80px; /* Remove previous margins */
+    padding: 0; /* Remove previous padding */
+  }
+  
+  /* Keep ALL your existing styles exactly as they are below this point */
+  .animated-line {
+    color: var(--yellow-theme-main-color);
+    font-weight: 900;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .job-summary {
+    color: var(--yellow-theme-sub-text-color);
+    font-size: 1.5rem;
+    line-height: 1.65;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--yellow-theme-main-color);
+  }
+  
+  .personal-details-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .personal-details-list ul > li {
+    line-height: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .personal-details-list .title {
+    color: var(--yellow-theme-main-color);
+    font-weight: 800;
+    font-size: 1.8rem;
+    min-width: 120px;
+  }
+  
+  .personal-details-list .value {
+    color: var(--yellow-theme-sub-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5;
+    border-bottom: 2px solid var(--yellow-theme-main-color);
+    position: relative;
+    display: inline-block;
+    margin-right: 16px;
+    padding-bottom: 1px;
+    color: var(--yellow-theme-sub-text-color);
+  }
+  
+  .about_content_servicewrapper_innerContent {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    background: radial-gradient(180px at center, var(--yellow-theme-main-color), transparent 90%);
+    position: relative;
+    border-radius: 50%;
+    border: 1.5px solid var(--yellow-theme-main-color);
+    animation: rotation 10s linear 1s infinite;
+
+    div:nth-child(1){
+        position: absolute;
+        top: -10%;
+        left: 41%;
+    }
+    
+    div:nth-child(2){
+        position: absolute;
+        right: -8%;
+        top: 41.5%;
+    }
+    
+    div:nth-child(3){
+        position: absolute;
+        bottom: -10%;
+        left: 41%;
+    }
+    
+    div:nth-child(4){
+        position: absolute;
+        left: -8%;
+        top: 41%;
+    }
+}
+
+@keyframes rotation{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@media only screen and (max-width)

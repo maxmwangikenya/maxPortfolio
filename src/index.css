@@ -2,7 +2,7 @@
 
 :root{
   --yellow-theme-bakground-color : black;
-  --yellow-theme-main-color : yellow;
+  --yellow-theme-main-color : #ffff00;
   --yellow-theme-sub-text-color : white;
   --yellow-theme-nav-background-color :black;
 }
