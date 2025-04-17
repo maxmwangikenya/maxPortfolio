@@ -1,0 +1,69 @@
+/* styles.css */
+.about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px; /* Optional: constrain overall width */
+    margin: 0 auto;
+  
+    &__content {
+      display: flex;
+      flex-direction: column;
+      width: 50%; /* Takes up half the page width */
+      gap: 30px; /* Increased gap for better spacing */
+      padding: 30px;
+    }
+  
+    &__animation-container {
+      width: 100%; /* Fills the 50% container */
+      display: flex;
+      flex-direction: column;
+      gap: 25px; /* Consistent spacing between elements */
+    }
+  
+    /* Headings with heavier font weights */
+    .animated-line {
+      color: var(--yellow-theme-main-color);
+      font-weight: 900; /* Extra bold for headings */
+      font-size: 2.8rem; /* Slightly larger */
+      line-height: 1.2;
+      margin: 0;
+      text-transform: uppercase; /* Makes headings more impactful */
+      letter-spacing: 1px;
+    }
+  
+    /* Job summary with strong presence */
+    .job-summary {
+      color: var(--yellow-theme-main-color);
+      font-weight: 700; /* Bold but not as heavy as headings */
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  
+    /* Personal details with clear hierarchy */
+    .personal-details-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      li {
+        display: flex;
+        align-items: baseline;
+        
+        .title {
+          color: var(--yellow-theme-main-color);
+          font-weight: 800; /* Very bold for labels */
+          font-size: 1.1rem;
+          min-width: 120px; /* Creates alignment */
+        }
+        
+        .value {
+          color: var(--yellow-theme-sub-text-color);
+          font-weight: 600; /* Semi-bold for values */
+          font-size: 1rem;
+        }
+      }
+    }
+  }

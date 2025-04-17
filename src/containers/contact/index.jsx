@@ -1,13 +1,19 @@
-import React from 'react';  // Capital "R" in React
+import React from 'react';
+import PageHeaderContent from '../../components/pageHeaderContainer';
+import { BsInfoCircleFill } from 'react-icons/bs';
 
 const Contact = () => {    
     return (
-        <div className="contact-page">  
-            <h1>Contact Page</h1>      
-            <p>Email: example@example.com</p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
+        <section id='contact' className='My contact'>
+            <PageHeaderContent 
+                headerText='Contact'
+                icon={<BsInfoCircleFill size={40} />}
+            />
+            <div className="contact__content">
+                {/* Content goes here */}
+            </div>
+        </section>
     );
 }
 
-export default Contact;    
+export default Contact;

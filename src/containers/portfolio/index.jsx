@@ -1,11 +1,19 @@
-import react from "react";
+import React from "react";
+import PageHeaderContent from "../../components/pageHeaderContainer";
+import { BsInfoCircleFill } from "react-icons/bs";
 
-const portfolio = () =>{
+const Portfolio = () => {
     return (
-        <div>
-            portfolio page
-        </div>
-    )
+        <section id='portfolio' className='portfolio'>
+            <PageHeaderContent 
+                headerText=' My Portfolio'
+                icon={<BsInfoCircleFill size={40} />}
+            />
+            <div className="portfolio__content">
+                {/* Content goes here */}
+            </div>
+        </section>
+    );
 }
 
-export default portfolio;
+export default Portfolio;

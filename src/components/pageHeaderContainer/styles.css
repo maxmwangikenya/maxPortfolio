@@ -1,22 +1,36 @@
-
-:root{
-    --yellow-theme-bakground-color : black;
-    --yellow-theme-main-color : yellow;
-    --yellow-theme-sub-text-color : white;
-    --yellow-theme-nav-background-color :black;
-  }
-
-.wrapper{
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px dashed var(--yellow-theme-main-color);
- h2{
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    line-height: 1rem;
-    text-transform: capitalize;
-    color: var(--yellow-theme-main-color);
- }
+:root {
+   --yellow-theme-bakground-color: black;
+   --yellow-theme-main-color: yellow;
+   --yellow-theme-sub-text-color: white;
+   --yellow-theme-nav-background-color: black;
 }
+
+.wrapper {
+   display: flex;
+   justify-content: space-between; /* This will push items to opposite ends */
+   align-items: center;
+   padding: 20px;
+   border-bottom: 1px dashed var(--yellow-theme-main-color);
+   width: 100%; /* Ensure it takes full width */
+}
+
+.wrapper h2 {
+   font-size: 36px;
+   font-weight: 700;
+   letter-spacing: 1.5px;
+   line-height: 1rem;
+   text-transform: capitalize;
+   color: var(--yellow-theme-main-color);
+   margin: 0; /* Remove default margins */
+}
+
+.icon-wrapper {
+   display: flex;
+   align-items: center;
+   color: var(--yellow-theme-main-color)
+}
+
+   .icon-wrapper svg {
+      color: yellow !important;
+      
+  }
