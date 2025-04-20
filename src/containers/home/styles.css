@@ -15,8 +15,9 @@ html, body {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    background-color:rgb(46, 45, 45);
+    background-color: rgb(46, 45, 45);
     overflow: hidden;
+    isolation: isolate; /* Creates new stacking context */
 }
 
 /* Animated background */
