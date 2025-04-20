@@ -1,0 +1,100 @@
+/* Dark Theme Styles */
+.resume.dark-theme {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0; /* Reduce vertical padding */
+    min-height: 100dvh; /* Use dynamic viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto;   /* Ensure normal vertical scroll only if needed */
+  }
+  
+  .resume.dark-theme .resume__container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 0; /* Prevent pushing content down */
+    flex-wrap: wrap;
+  }
+  
+  .resume.dark-theme .resume__column {
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: rgba(20, 20, 20, 0.7);
+    box-sizing: border-box;
+  }
+  
+  .resume.dark-theme .resume__section-header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--yellow-theme-main-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .resume.dark-theme .resume__section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--yellow-theme-main-color);
+  }
+  
+  /* Timeline styling */
+  .resume.dark-theme .vertical-timeline {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline::before {
+    background: var(--yellow-theme-main-color) !important;
+    width: 2px !important;
+  }
+  
+  .resume.dark-theme .timeline_element {
+    margin: 0 0 2rem 0 !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline-element-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    transition: all 0.3s ease;
+    background-color: #111 !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline-element-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline-element-title {
+    color: #fff !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline-element-subtitle {
+    color: var(--yellow-theme-main-color) !important;
+  }
+  
+  .resume.dark-theme .vertical-timeline-element p {
+    color: #ddd !important;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .resume.dark-theme .resume__container {
+      flex-direction: column;
+    }
+  
+    .resume.dark-theme .vertical-timeline::before {
+      left: 18px !important;
+    }
+  }
+  
