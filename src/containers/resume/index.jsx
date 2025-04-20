@@ -9,8 +9,9 @@ const Resume = () => {
                 headerText='My Resume'
                 icon={<BsInfoCircleFill size={40} />}
             />
-            <div className="about__content">
-                {/* Content goes here */}
+            <div className="timeline">
+            <div className="timeline_experience"></div>
+            <div className="timeline_education"></div>
             </div>
         </section>
     );

@@ -1,9 +1,13 @@
 /* Add this new layout structure at the bottom of your CSS */
-.about__content {
-    display: flex;
-    width: 100%;
-  }
-  
+/* Eliminate bottom space caused by absolute positioning */
+.about {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+  height: max-content;
+}
+
+
   .about__main-content {
     width: 50%;
     padding-right: 20px; /* Maintains spacing */
@@ -13,12 +17,12 @@
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns to top */
-    position: absolute; /* Changed from default */
-    right: 0; /* Positions at far right */
-    top: 100px; /* Adjust this value to move up/down */
-    margin-top: 80px; /* Remove previous margins */
-    padding: 0; /* Remove previous padding */
+    align-items: flex-start;
+    position: absolute;
+    right: 0;
+    top: 100px; /* Adjust as needed */
+    padding: 0;
+    margin: 0;  /* Remove extra vertical spacing */
   }
   
   /* Keep ALL your existing styles exactly as they are below this point */
@@ -82,35 +86,62 @@
     border-radius: 50%;
     border: 1.5px solid var(--yellow-theme-main-color);
     animation: rotation 10s linear 1s infinite;
-
-    div:nth-child(1){
-        position: absolute;
-        top: -10%;
-        left: 41%;
+  }
+  
+  
+  .about_content_servicewrapper_innerContent div:nth-child(1) {
+    position: absolute;
+    top: -10%;
+    left: 41%;
+  }
+  
+  .about_content_servicewrapper_innerContent div:nth-child(2) {
+    position: absolute;
+    right: -8%;
+    top: 41.5%;
+  }
+  
+  .about_content_servicewrapper_innerContent div:nth-child(3) {
+    position: absolute;
+    bottom: -10%;
+    left: 41%;
+  }
+  
+  .about_content_servicewrapper_innerContent div:nth-child(4) {
+    position: absolute;
+    left: -8%;
+    top: 41%;
+  }
+  
+  @keyframes rotation {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Fixed Media Query */
+  @media only screen and (max-width: 768px) {
+    .about__content {
+      flex-direction: column;
+      position: relative; /* Needed for absolute children */
     }
     
-    div:nth-child(2){
-        position: absolute;
-        right: -8%;
-        top: 41.5%;
+    .about__main-content {
+      width: 100%;
+      padding-right: 0;
     }
     
-    div:nth-child(3){
-        position: absolute;
-        bottom: -10%;
-        left: 41%;
+    .about__right-column {
+      position: relative; /* Change from absolute to relative */
+      width: 100%;
+      top: auto;
+      right: auto;
+      margin-top: 40px; /* Adjust as needed */
+      justify-content: center;
     }
     
-    div:nth-child(4){
-        position: absolute;
-        left: -8%;
-        top: 41%;
+    .about_content_servicewrapper_innerContent {
+      width: 280px; /* Smaller for mobile */
+      height: 280px;
     }
-}
-
-@keyframes rotation{
-    100%{
-        transform: rotate(360deg);
-    }
-}
-@media only screen and (max-width)
+  }
