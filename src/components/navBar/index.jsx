@@ -12,15 +12,18 @@ const data = [
   { label: "CONTACT", to: "/contact" }
 ];
 
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const mylogo =  "/mylogo.jpg";
 
   return (
     <nav>
       <div className="navbar">
-        <Link to="/" className="logo">
-          <FaReact size={30} />
-        </Link>
+      <Link to="/" className="logo">
+        <img src={mylogo} alt="Logo" style={{ height: "30px" }} />
+      </Link>
 
         {/* Desktop Navigation */}
         <div className="desktop-nav">
